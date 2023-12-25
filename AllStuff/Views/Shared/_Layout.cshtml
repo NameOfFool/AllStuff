@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/jquery-modal/jquery-modal.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AllStuff.styles.css" asp-append-version="true" />
 </head>
@@ -32,10 +33,10 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a href="#" class="nav-link text-dark">Войти</a>
+                            <a id="loginB" class="btn nav-link text-dark">Войти</a>
                         </li>
                         <li>
-                            <a href="#" class="nav-link text-dark">Регистрация</a>
+                            <a href="#login-form" class="nav-link text-dark">Регистрация</a>
                         </li>
                     </ul>
                 </div>
@@ -44,9 +45,11 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
-            @RenderBody()
+            @RenderBody()            
+            <partial name="/Views/Shared/Login.cshtml" />
         </main>
-    </div>
+        </div>
+            
 
     <footer class="border-top footer text-muted">
         <div class="container">
@@ -56,6 +59,8 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
